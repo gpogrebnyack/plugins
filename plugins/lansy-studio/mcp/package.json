@@ -1,0 +1,20 @@
+{
+  "name": "lansy-studio-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MCP server for Lansy Studio carousels. Built into ../server.mjs (committed); the plugin runs that file with node.",
+  "scripts": {
+    "build": "esbuild src/server.ts --bundle --platform=node --format=esm --target=node20 --outfile=../server.mjs --banner:js=\"// Built from plugin/mcp/src by npm run build. Do not edit.\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "20.19.43",
+    "esbuild": "0.28.2",
+    "typescript": "5.9.3"
+  }
+}

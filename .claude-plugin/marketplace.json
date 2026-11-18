@@ -1,0 +1,12 @@
+{
+  "name": "gpogrebnyack",
+  "description": "Плагины для Claude Code от @gpogrebnyack.",
+  "owner": { "name": "Zhora Pogrebnyak" },
+  "plugins": [
+    {
+      "name": "lansy-studio",
+      "source": "./plugins/lansy-studio",
+      "description": "Карусели Lansy для LinkedIn из идеи и фактов: агент собирает их в Lansy Studio и даёт ссылку на доводку."
+    }
+  ]
+}
