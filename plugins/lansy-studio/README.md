@@ -9,7 +9,7 @@
 /plugin install lansy-studio@gpogrebnyack
 ```
 
-При установке Claude Code спросит токен: Lansy Studio → меню аккаунта → Agent access → Create. Токен хранится в системной связке ключей.
+Затем впиши токен: `/plugin configure lansy-studio@gpogrebnyack`. Токен берётся в Lansy Studio → меню аккаунта → Agent access → Create и хранится в системной связке ключей.
 
 Обновление: `/plugin marketplace update gpogrebnyack`, затем `/plugin update lansy-studio@gpogrebnyack`. Новый релиз — новый `version` в `.claude-plugin/plugin.json`.
 

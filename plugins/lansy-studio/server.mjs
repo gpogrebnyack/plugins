@@ -23562,7 +23562,7 @@ var TOKEN = (process.env.LANSY_TOKEN || "").trim();
 var ApiError = class extends Error {
 };
 async function api(method, route, body, type = "application/json") {
-  if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio \u2192 account menu \u2192 Agent access, then set it in the plugin's settings (/plugin \u2192 lansy-studio). If the setting isn't offered, reinstall the plugin: it asks for the token on install.");
+  if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio \u2192 account menu \u2192 Agent access, then run /plugin configure lansy-studio@gpogrebnyack and paste it.");
   let res;
   try {
     res = await fetch(BASE + "/api/v1" + route, {
@@ -23601,7 +23601,7 @@ var page = record(string2(), unknown()).describe("{ template, variant?, \u2026fi
 var pages = array(page).min(1).max(20);
 var theme = _enum(["lime", "green"]);
 var server = new McpServer(
-  { name: "lansy-studio", version: "0.1.0" },
+  { name: "lansy-studio", version: "0.1.1" },
   {
     instructions: [
       "Lansy Studio builds LinkedIn carousels (4:5 pages) from brand templates; the layout engine sizes and places everything.",

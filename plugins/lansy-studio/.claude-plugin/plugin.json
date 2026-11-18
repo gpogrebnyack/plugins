@@ -1,7 +1,7 @@
 {
   "name": "lansy-studio",
   "displayName": "Lansy Studio",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Build Lansy LinkedIn carousels from an idea and the facts: the agent picks templates and pictures, checks the layout and hands back a Lansy Studio link to fine-tune.",
   "author": { "name": "Lansy" },
   "keywords": ["lansy", "linkedin", "carousel"],

@@ -16,7 +16,7 @@ type ApiResult = { ok?: boolean; error?: string; errors?: Note[]; notes?: Note[]
 class ApiError extends Error {}
 
 async function api(method: string, route: string, body?: unknown, type = "application/json"): Promise<ApiResult> {
-  if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio → account menu → Agent access, then set it in the plugin's settings (/plugin → lansy-studio). If the setting isn't offered, reinstall the plugin: it asks for the token on install.")
+  if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio → account menu → Agent access, then run /plugin configure lansy-studio@gpogrebnyack and paste it.")
   let res: Response
   try {
     res = await fetch(BASE + "/api/v1" + route, {
@@ -60,7 +60,7 @@ const pages = z.array(page).min(1).max(20)
 const theme = z.enum(["lime", "green"])
 
 const server = new McpServer(
-  { name: "lansy-studio", version: "0.1.0" },
+  { name: "lansy-studio", version: "0.1.1" },
   {
     instructions: [
       "Lansy Studio builds LinkedIn carousels (4:5 pages) from brand templates; the layout engine sizes and places everything.",

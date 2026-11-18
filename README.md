@@ -22,6 +22,7 @@
 
 ```
 /plugin install lansy-studio@gpogrebnyack
+/plugin configure lansy-studio@gpogrebnyack
 ```
 
 Подробности — в [`plugins/lansy-studio/README.md`](plugins/lansy-studio/README.md) и [`skills/lansy-carousel/SKILL.md`](plugins/lansy-studio/skills/lansy-carousel/SKILL.md).
