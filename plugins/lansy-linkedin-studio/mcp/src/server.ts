@@ -16,7 +16,7 @@ type ApiResult = { ok?: boolean; error?: string; errors?: Note[]; notes?: Note[]
 class ApiError extends Error {}
 
 async function api(method: string, route: string, body?: unknown, type = "application/json"): Promise<ApiResult> {
-  if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio → account menu → Agent access, then run /plugin configure lansy-studio@gpogrebnyack and paste it.")
+  if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio → account menu → Agent access, then run /plugin configure lansy-linkedin-studio@gpogrebnyack and paste it.")
   let res: Response
   try {
     res = await fetch(BASE + "/api/v1" + route, {
@@ -60,10 +60,10 @@ const pages = z.array(page).min(1).max(20)
 const theme = z.enum(["lime", "green"])
 
 const server = new McpServer(
-  { name: "lansy-studio", version: "0.1.1" },
+  { name: "lansy-linkedin-studio", version: "0.2.0" },
   {
     instructions: [
-      "Lansy Studio builds LinkedIn carousels (4:5 pages) from brand templates; the layout engine sizes and places everything.",
+      "Lansy Studio builds LinkedIn posts from brand templates: a carousel of 4:5 pages, or a single-image post (a carousel of one page). The layout engine sizes and places everything.",
       "Workflow: lansy_catalog once → write the pages → lansy_check until it fits with no warnings you can fix → lansy_create → give the user the studio link.",
       "Pictures from the user's disk go through lansy_upload_image first; pass the returned path as img (photo), cut (person without background) or uiImg (screenshot).",
       "Copy is English. Facts come from the user; never invent numbers or names. One *marked* phrase per text at most, never on digits.",
@@ -103,7 +103,7 @@ server.registerTool(
   "lansy_create",
   {
     title: "Create a carousel",
-    description: "Saves a new carousel in the user's Lansy Studio and returns its link for fine-tuning. Run lansy_check first.",
+    description: "Saves a new carousel (or a one-page single-image post) in the user's Lansy Studio and returns its link for fine-tuning. Run lansy_check first.",
     inputSchema: { title: z.string().min(1).max(120).describe("carousel name in the studio list"), theme: theme.optional().describe("accent colour, default lime"), pages },
   },
   async ({ title, theme, pages }) => {

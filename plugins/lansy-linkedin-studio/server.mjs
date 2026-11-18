@@ -23562,7 +23562,7 @@ var TOKEN = (process.env.LANSY_TOKEN || "").trim();
 var ApiError = class extends Error {
 };
 async function api(method, route, body, type = "application/json") {
-  if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio \u2192 account menu \u2192 Agent access, then run /plugin configure lansy-studio@gpogrebnyack and paste it.");
+  if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio \u2192 account menu \u2192 Agent access, then run /plugin configure lansy-linkedin-studio@gpogrebnyack and paste it.");
   let res;
   try {
     res = await fetch(BASE + "/api/v1" + route, {
@@ -23601,10 +23601,10 @@ var page = record(string2(), unknown()).describe("{ template, variant?, \u2026fi
 var pages = array(page).min(1).max(20);
 var theme = _enum(["lime", "green"]);
 var server = new McpServer(
-  { name: "lansy-studio", version: "0.1.1" },
+  { name: "lansy-linkedin-studio", version: "0.2.0" },
   {
     instructions: [
-      "Lansy Studio builds LinkedIn carousels (4:5 pages) from brand templates; the layout engine sizes and places everything.",
+      "Lansy Studio builds LinkedIn posts from brand templates: a carousel of 4:5 pages, or a single-image post (a carousel of one page). The layout engine sizes and places everything.",
       "Workflow: lansy_catalog once \u2192 write the pages \u2192 lansy_check until it fits with no warnings you can fix \u2192 lansy_create \u2192 give the user the studio link.",
       "Pictures from the user's disk go through lansy_upload_image first; pass the returned path as img (photo), cut (person without background) or uiImg (screenshot).",
       "Copy is English. Facts come from the user; never invent numbers or names. One *marked* phrase per text at most, never on digits."
@@ -23647,7 +23647,7 @@ server.registerTool(
   "lansy_create",
   {
     title: "Create a carousel",
-    description: "Saves a new carousel in the user's Lansy Studio and returns its link for fine-tuning. Run lansy_check first.",
+    description: "Saves a new carousel (or a one-page single-image post) in the user's Lansy Studio and returns its link for fine-tuning. Run lansy_check first.",
     inputSchema: { title: string2().min(1).max(120).describe("carousel name in the studio list"), theme: theme.optional().describe("accent colour, default lime"), pages }
   },
   async ({ title, theme: theme2, pages: pages2 }) => {

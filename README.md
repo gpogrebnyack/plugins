@@ -14,15 +14,15 @@
 
 ## Плагины
 
-### `lansy-studio`
+### `lansy-linkedin-studio`
 
-Карусели Lansy для LinkedIn. Надиктуй идею и факты кейса — агент нарежет историю на страницы, подберёт шаблоны, картинки и ритм фонов, проверит вёрстку шрифтами бренда и сохранит карусель в Lansy Studio. В ответ — ссылка: дальше доводишь в студии. Внутри — навык `lansy-carousel` и MCP-сервер с шестью инструментами поверх API студии.
+Посты Lansy для LinkedIn: карусели и одиночные картинки. Надиктуй идею и факты кейса — агент нарежет историю на страницы, подберёт шаблоны, картинки и ритм фонов, проверит вёрстку шрифтами бренда и сохранит пост в Lansy Studio. В ответ — ссылка: дальше доводишь в студии. Внутри — навык `lansy-linkedin-studio` и MCP-сервер с шестью инструментами поверх API студии.
 
 Нужно до установки: аккаунт в Lansy Studio и токен из меню аккаунта → Agent access. Node.js 20+.
 
 ```
-/plugin install lansy-studio@gpogrebnyack
-/plugin configure lansy-studio@gpogrebnyack
+/plugin install lansy-linkedin-studio@gpogrebnyack
+/plugin configure lansy-linkedin-studio@gpogrebnyack
 ```
 
-Подробности — в [`plugins/lansy-studio/README.md`](plugins/lansy-studio/README.md) и [`skills/lansy-carousel/SKILL.md`](plugins/lansy-studio/skills/lansy-carousel/SKILL.md).
+Подробности — в [`plugins/lansy-linkedin-studio/README.md`](plugins/lansy-linkedin-studio/README.md) и [`skills/lansy-linkedin-studio/SKILL.md`](plugins/lansy-linkedin-studio/skills/lansy-linkedin-studio/SKILL.md).

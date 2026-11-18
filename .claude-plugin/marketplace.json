@@ -4,9 +4,9 @@
   "owner": { "name": "Zhora Pogrebnyak" },
   "plugins": [
     {
-      "name": "lansy-studio",
-      "source": "./plugins/lansy-studio",
-      "description": "Карусели Lansy для LinkedIn из идеи и фактов: агент собирает их в Lansy Studio и даёт ссылку на доводку."
+      "name": "lansy-linkedin-studio",
+      "source": "./plugins/lansy-linkedin-studio",
+      "description": "Посты Lansy для LinkedIn, карусели и одиночные картинки, из идеи и фактов: агент собирает их в Lansy Studio и даёт ссылку на доводку."
     }
   ]
 }
