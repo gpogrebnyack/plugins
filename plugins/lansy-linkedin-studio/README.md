@@ -9,13 +9,13 @@
 /plugin install lansy-linkedin-studio@gpogrebnyack
 ```
 
-Затем впиши токен: `/plugin configure lansy-linkedin-studio@gpogrebnyack`. Токен берётся в Lansy Studio → меню аккаунта → Agent access → Create и хранится в системной связке ключей.
+Первый запрос откроет браузер: войди в Lansy Studio и нажми Allow. Всё. Если браузер не открылся — `/mcp` → lansy → Authenticate. Отключить агента — в студии: меню аккаунта → Agent access.
 
 Обновление: `/plugin marketplace update gpogrebnyack`, затем `/plugin update lansy-linkedin-studio@gpogrebnyack`. Новый релиз — новый `version` в `.claude-plugin/plugin.json`.
 
 ## Внутри
 
 - `skills/lansy-linkedin-studio/SKILL.md` — как собирать пост: шаблоны под мысли, ритм фонов, тексты, картинки, проверка, правки.
-- `server.mjs` — MCP-сервер, собранный в один файл (плагины ставятся без `npm install`). Исходник — `mcp/src/server.ts`, сборка: `cd mcp && npm install && npm run build`.
-- Инструменты: `lansy_catalog`, `lansy_check`, `lansy_create`, `lansy_get`, `lansy_update`, `lansy_upload_image`. Они ходят в `/api/v1` студии: каталог и проверка вёрстки строятся из её движка.
-- `mcp/scripts/smoke.mjs` — вызывает каждый инструмент: `LANSY_URL=http://localhost:3101 LANSY_TOKEN=lsk_… IMAGE=/path/cut.png node mcp/scripts/smoke.mjs`.
+- MCP-сервер живёт в самой студии: `https://lansy-studio.vercel.app/mcp`, вход через OAuth (Supabase Auth). Плагину не нужны ни Node, ни токен; инструменты обновляются вместе со студией.
+- Инструменты: `lansy_catalog`, `lansy_check`, `lansy_create`, `lansy_get`, `lansy_update`, `lansy_upload_link`. Каталог и проверка вёрстки строятся из движка студии.
+- Тот же сервер подключается к Codex (`codex mcp add lansy --url https://lansy-studio.vercel.app/mcp`, затем `codex mcp login lansy`) и к claude.ai как свой коннектор.

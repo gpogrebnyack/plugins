@@ -16,13 +16,12 @@
 
 ### `lansy-linkedin-studio`
 
-Посты Lansy для LinkedIn: карусели и одиночные картинки. Надиктуй идею и факты кейса — агент нарежет историю на страницы, подберёт шаблоны, картинки и ритм фонов, проверит вёрстку шрифтами бренда и сохранит пост в Lansy Studio. В ответ — ссылка: дальше доводишь в студии. Внутри — навык `lansy-linkedin-studio` и MCP-сервер с шестью инструментами поверх API студии.
+Посты Lansy для LinkedIn: карусели и одиночные картинки. Надиктуй идею и факты кейса — агент нарежет историю на страницы, подберёт шаблоны, картинки и ритм фонов, проверит вёрстку шрифтами бренда и сохранит пост в Lansy Studio. В ответ — ссылка: дальше доводишь в студии. Внутри — навык `lansy-linkedin-studio` и адрес MCP-сервера студии с шестью инструментами.
 
-Нужно до установки: аккаунт в Lansy Studio и токен из меню аккаунта → Agent access. Node.js 20+.
+Нужно до установки: аккаунт в Lansy Studio. При первом запросе откроется браузер: войти и нажать Allow.
 
 ```
 /plugin install lansy-linkedin-studio@gpogrebnyack
-/plugin configure lansy-linkedin-studio@gpogrebnyack
 ```
 
 Подробности — в [`plugins/lansy-linkedin-studio/README.md`](plugins/lansy-linkedin-studio/README.md) и [`skills/lansy-linkedin-studio/SKILL.md`](plugins/lansy-linkedin-studio/skills/lansy-linkedin-studio/SKILL.md).
