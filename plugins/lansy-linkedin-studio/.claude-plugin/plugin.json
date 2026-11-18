@@ -1,7 +1,7 @@
 {
   "name": "lansy-linkedin-studio",
   "displayName": "Lansy LinkedIn Studio",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Lansy LinkedIn posts, carousels and single images, from an idea and the facts: the agent picks templates and pictures, checks the layout and hands back a Lansy Studio link to fine-tune.",
   "author": { "name": "Lansy" },
   "keywords": ["lansy", "linkedin", "carousel", "post"],

@@ -23563,6 +23563,7 @@ var ApiError = class extends Error {
 };
 async function api(method, route, body, type = "application/json") {
   if (!TOKEN) throw new ApiError("No Lansy token. Create one in Lansy Studio \u2192 account menu \u2192 Agent access, then run /plugin configure lansy-linkedin-studio@gpogrebnyack and paste it.");
+  if (!/^lsk_[A-Za-z0-9_-]{43}$/.test(TOKEN)) throw new ApiError(`The saved Lansy token isn't a token: it is ${TOKEN.length} characters${TOKEN.startsWith("lsk_") ? "" : " and doesn't start with lsk_"}, a token is 47 and starts with lsk_. Run /plugin configure lansy-linkedin-studio@gpogrebnyack again, paste the whole token from Agent access, then /reload-plugins.`);
   let res;
   try {
     res = await fetch(BASE + "/api/v1" + route, {
@@ -23601,7 +23602,7 @@ var page = record(string2(), unknown()).describe("{ template, variant?, \u2026fi
 var pages = array(page).min(1).max(20);
 var theme = _enum(["lime", "green"]);
 var server = new McpServer(
-  { name: "lansy-linkedin-studio", version: "0.2.0" },
+  { name: "lansy-linkedin-studio", version: "0.2.1" },
   {
     instructions: [
       "Lansy Studio builds LinkedIn posts from brand templates: a carousel of 4:5 pages, or a single-image post (a carousel of one page). The layout engine sizes and places everything.",

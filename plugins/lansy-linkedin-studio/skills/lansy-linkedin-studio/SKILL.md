@@ -22,7 +22,7 @@ description: Собирает посты Lansy для LinkedIn в Lansy Studio �
 | `lansy_update` | Правка поверх прочитанной версии. `pages` — весь новый список |
 | `lansy_upload_image` | Картинка с диска в библиотеку пользователя → путь для `img`, `cut` или `uiImg` |
 
-Инструмент пишет «No Lansy token» или «token was refused» — скажи пользователю: «Создай токен в Lansy Studio → меню аккаунта → Agent access и впиши его командой /plugin configure lansy-linkedin-studio@gpogrebnyack». Дальше не продолжай.
+Инструмент пишет «No Lansy token», «isn't a token» или «token was refused» — скажи пользователю: «Создай токен в Lansy Studio → меню аккаунта → Agent access и впиши его командой /plugin configure lansy-linkedin-studio@gpogrebnyack». Дальше не продолжай.
 
 ## Запреты
 
